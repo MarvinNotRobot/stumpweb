@@ -90,11 +90,17 @@ a:hover {
 }
 
 .nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem 1.1rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.6rem;
   font-weight: 600;
   color: var(--muted);
+  width: 100%;
+  background: var(--white);
+  padding: 0.8rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(31, 35, 31, 0.08);
+  box-shadow: 0 10px 20px rgba(12, 22, 12, 0.12);
 }
 
 .nav-cta {
@@ -107,6 +113,53 @@ a:hover {
   border-radius: 999px;
   font-weight: 700;
   box-shadow: 0 10px 25px rgba(47, 95, 58, 0.25);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(31, 35, 31, 0.12);
+  background: var(--white);
+  cursor: pointer;
+}
+
+.nav-toggle-label span {
+  position: relative;
+  width: 20px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 999px;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 999px;
+}
+
+.nav-toggle-label span::before {
+  transform: translateY(-6px);
+}
+
+.nav-toggle-label span::after {
+  transform: translateY(6px);
+}
+
+.nav-toggle:checked ~ .nav-links {
+  display: flex;
 }
 
 .hero {
@@ -412,6 +465,25 @@ a:hover {
 }
 
 @media (min-width: 800px) {
+  .nav {
+    flex-wrap: nowrap;
+  }
+
+  .nav-toggle-label {
+    display: none;
+  }
+
+  .nav-links {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 1.2rem;
+    width: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+  }
+
   .hero-grid {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
