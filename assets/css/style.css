@@ -67,8 +67,9 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1rem;
   padding: 0.9rem 0;
+  flex-wrap: wrap;
 }
 
 .brand {
@@ -89,8 +90,9 @@ a:hover {
 }
 
 .nav-links {
-  display: none;
-  gap: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.1rem;
   font-weight: 600;
   color: var(--muted);
 }
@@ -410,10 +412,6 @@ a:hover {
 }
 
 @media (min-width: 800px) {
-  .nav-links {
-    display: inline-flex;
-  }
-
   .hero-grid {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
