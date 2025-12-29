@@ -10,8 +10,8 @@
   --shadow: rgba(10, 20, 10, 0.18);
   --radius: 18px;
   --max-width: 1120px;
-  --font-serif: "Merriweather", "Times New Roman", serif;
-  --font-sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Times New Roman", "Georgia", serif;
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
 }
 
 * {
@@ -95,7 +95,7 @@ a:hover {
   flex-direction: column;
   gap: 0.6rem;
   font-weight: 600;
-  color: var(--muted);
+  color: var(--ink);
   width: min(240px, 90vw);
   background: var(--white);
   padding: 0.8rem 1rem;
@@ -488,14 +488,18 @@ a:hover {
   }
 
   .nav-links {
-    display: inline-flex;
+    display: inline-flex !important;
     flex-direction: row;
     gap: 1.2rem;
     width: auto;
-    background: transparent;
-    padding: 0;
-    border: none;
-    box-shadow: none;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(31, 35, 31, 0.08);
+    box-shadow: 0 8px 20px rgba(12, 22, 12, 0.08);
+    position: static;
+    margin-left: auto;
+    margin-right: 0;
   }
 
   .hero-grid {
